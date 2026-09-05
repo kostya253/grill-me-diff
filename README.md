@@ -53,6 +53,13 @@ The `grill-phone` skill is designed to relentlessly quiz users on specific piece
    - Or invoke `/grill-code` or `/grill-diff` directly
    - Provide specific targets for the skills (file paths, directories, symbols, or diff specs)
 
+### Installing with GitHub CLI
+
+You can also install these skills using the GitHub CLI:
+
+- Install with: `gh skill install kostya253/grill-me-diff`
+- Pin with: `gh skill install kostya253/grill-me-diff <skill> --pin v1.0.0`
+
 ### Installing in Codex
 
 1. **Access the Skills Marketplace**
