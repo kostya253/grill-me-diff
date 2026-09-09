@@ -80,7 +80,7 @@ For each question that requires code examination, send code snippets to the term
 1. Send relevant code snippets to the user's terminal/device
 2. Ask questions about the code content, behavior, and implications
 3. Use the user's answers to grade their understanding
-4. Provide feedback based on the actual code content
+4. Provide feedback based on the actual code content 
 
 This approach allows users to examine code in their preferred environment while still being tested on their comprehension.
 
