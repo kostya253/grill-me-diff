@@ -75,14 +75,31 @@ Tell the user up front they can steer: `hint`, `skip`, `harder`, `easier`, `stop
 
 ## Code Delivery
 
-For each question that requires code examination, send code snippets to the terminal for the user to examine:
+**Every question must ship the code it asks about.** No question referencing code
+without that code inline in the same message — the user is on a phone/terminal and
+cannot open files.
 
-1. Send relevant code snippets to the user's terminal/device
-2. Ask questions about the code content, behavior, and implications
-3. Use the user's answers to grade their understanding
-4. Provide feedback based on the actual code content 
+1. With each question, include **all** snippets relevant to answering it: the
+   function under test, plus any helper, caller, type, or constant needed to answer.
+   Label every snippet `file:line-line`.
+2. If the answer depends on flow across a whole file — or snippets would omit
+   context that changes the answer — **send the whole file**. Length is not a reason
+   to trim. Multiple whole files if the question spans them.
+3. Prefer over-sending to under-sending. A question the user cannot answer because
+   context was withheld is a broken question, not a hard one.
+4. Never redact or elide the answer out of the snippet (no `// ...` over the key
+   line) — the snippet is the evidence, the question is what to conclude from it.
+5. Re-send code in later rounds instead of pointing back at an earlier message.
 
-This approach allows users to examine code in their preferred environment while still being tested on their comprehension.
+Format:
+
+```
+❓ **Q1** — **<short title>**: <question>
+
+`path/to/file.go:120-148`
+```go
+<code>
+```
 
 ## Done
 
